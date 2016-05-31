@@ -1,0 +1,243 @@
+{
+    "version" : "0.0.4",
+    "rest_api" : {
+        "components" : {
+            "accounts"                : "Accounts",
+            "notifications"           : "Notifications",
+            "recordings"              : "Recordings",
+            "sms_messages"            : "SMS/Messages",
+            "transcriptions"          : "Transcriptions",
+            "calls"                   : "Calls",
+            "carrier"                 : "Lookups/Carrier",
+            "cnam"                    : "Lookups/Cnam",
+            "bna"                     : "Lookups/Bna",
+            "incoming_phone_numbers"  : "IncomingPhoneNumbers",
+            "available_phone_numbers" : "AvailablePhoneNumbers",
+            "conferences"             : "Conferences",
+            "applications"            : "Applications",
+            "fraud"                   : "Fraud",
+            "usages"                  : "Usages",
+            "rates"                   : "Rates",
+            "connect"                 : "Connect",
+            "faxes"                   : "Faxes"
+        },
+
+        "pagination" : [
+            "page", "num_pages", "page_size", "total", "start", "end",
+            "uri", "first_page_uri", "previous_page_uri", "next_page_uri",
+            "last_page_uri"   
+        ]
+    },
+    
+    "inboundxml" : {
+        "verbs": {
+            "Response": {
+                "attributes": [],
+                "nesting": [
+                    "Say",
+                    "Play",
+                    "Gather",
+                    "GetSpeech",
+                    "Record",
+                    "PlayLastRecording",
+                    "Dial",
+                    "Hangup",
+                    "Ping",
+                    "Redirect",
+                    "Reject",
+                    "Pause",
+                    "Sms"
+                ],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/response/",
+                "blank": false
+            },
+            "Say": {
+                "attributes": [
+                    "voice",
+                    "loop",
+                    "language"
+                ],
+                "nesting": [],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/say/",
+                "blank": false
+            },
+            "Play": {
+                "attributes": [
+                    "loop"
+                ],
+                "nesting": [],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/play/",
+                "blank": false
+            },
+            "Gather": {
+                "attributes": [
+                    "action",
+                    "method",
+                    "finishOnKey",
+                    "timeout",
+                    "numDigits"
+                ],
+                "nesting": [
+                    "Say",
+                    "Play",
+                    "Pause"
+                ],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/gather/",
+                "blank": true
+            },
+            "Record": {
+                "attributes": [
+                    "action",
+                    "method",
+                    "timeout",
+                    "finishOnKey",
+                    "maxLength",
+                    "transcribe",
+                    "transcribeCallback",
+                    "transcribeQuality",
+                    "playBeep",
+                    "direction",
+                    "fileFormat",
+                    "background"
+                ],
+                "nesting": [],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/record/",
+                "blank": true
+            },
+            "PlayLastRecording": {
+                "attributes": [],
+                "nesting": [],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/playlastrecording/",
+                "blank": true
+            },
+            "GetSpeech": {
+                "attributes": [
+                    "grammar", "action", "method", "timeout", "playBeep"
+                ],
+                "nesting": [
+                    "Say", "Play", "Pause"
+                ],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/getspeech/",
+                "blank": false
+            },
+            "Dial": {
+                "attributes": [
+                    "action",
+                    "method",
+                    "timeout",
+                    "hangupOnStar",
+                    "timeLimit",
+                    "callerId",
+                    "hideCallerId",
+                    "dialMusic",
+                    "callbackUrl",
+                    "callbackMethod",
+                    "confirmSound",
+                    "digitsMatch",
+                    "straightToVm",
+                    "heartbeatUrl",
+                    "heartbeatMethod",
+                    "forwardedFrom",
+                    "ifMachine",
+                    "ifMachineUrl",
+                    "ifMachineMethod"
+                ],
+                "nesting": [
+                    "Number",
+                    "Conference",
+                    "Sip"
+                ],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/dial/",
+                "blank": false
+            },
+            "Number": {
+                "attributes": [
+                    "sendDigits"
+                ],
+                "nesting": [],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/dial/number/",
+                "blank": false
+            },
+            "Conference": {
+                "attributes": [
+                    "muted",
+                    "beep",
+                    "startConferenceOnEnter",
+                    "endConferenceOnEnter",
+                    "maxParticipants",
+                    "waitUrl",
+                    "waitMethod",
+                    "hangupOnStar",
+                    "callbackUrl",
+                    "waitSound",
+                    "waitSoundMethod",
+                    "digitsMatch",
+                    "stayAlone"
+                ],
+                "nesting": [],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/dial/conference/",
+                "blank": false
+            },
+            "Sip": {
+                "attributes": [
+                    "action",
+                    "method"
+                ],
+                "nesting": [],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/dial/sip/",
+                "blank": false
+            },
+            "Hangup": {
+                "attributes": [
+                    "schedule"
+                ],
+                "nesting": [],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/hangup/",
+                "blank": false
+            },
+            "Ping": {
+                "attributes": [],
+                "nesting": [],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/ping/",
+                "blank": true
+            },
+            "Redirect": {
+                "attributes": [
+                    "method"
+                ],
+                "nesting": [],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/redirect/",
+                "blank": true
+            },
+            "Reject": {
+                "attributes": [
+                    "reason"
+                ],
+                "nesting": [],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/reject/",
+                "blank": true
+            },
+            "Pause": {
+                "attributes": [
+                    "length"
+                ],
+                "nesting": [],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/voice/pause/",
+                "blank": true
+            },
+            "Sms": {
+                "attributes": [
+                    "to",
+                    "from",
+                    "action",
+                    "method",
+                    "statusCallback",
+                    "statusCallbackMethod"
+                ],
+                "nesting": [],
+                "docs_url": "http: //www.zang.io/docs/api/inboundxml/sms/sms/",
+                "blank": false
+            }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+nbproject/*
+*.json~
+*.php~
+*.gitignore~
+.DS_Store
