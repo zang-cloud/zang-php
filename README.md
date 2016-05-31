@@ -3,7 +3,7 @@ zang-php
 
 This PHP library is an open source tool built to simplify interaction with the [Zang](http://www.zang.io) telephony platform. Zang makes adding voice and SMS to applications fun and easy.
 
-For this libraries full documentation visit: http://zang.github.com/zang-php
+For this libraries full documentation visit: http://zang.github.com/zang-cloud/zang-php
 
 For more information about Zang visit:  [zang.io/features](http://www.zang.io/features) or [zang.io/docs](http://www.zang.io/docs)
 
