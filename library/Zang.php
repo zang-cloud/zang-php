@@ -42,7 +42,7 @@ require_once 'Zang/Connect.php';
  * @package   Zang
  * @author    Nevio Vesic <nevio@zang.io>
  * @license   http://creativecommons.org/licenses/MIT/ MIT
- * @copyright (2012) Zang, Inc. <info@zang.io>
+ * @copyright (2012) Zang, Inc. <support@zang.io>
  */
 
 final class Zang extends Zang_Related
