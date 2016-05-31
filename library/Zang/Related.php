@@ -25,7 +25,7 @@ abstract class Zang_Related
 
 
     /** BASE ZANG URI */
-    CONST API_URL              = 'https://api.zang.com/';
+    CONST API_URL              = 'https://api.zang.io/';
 
     /** BASE ZANG API VERSION */
     CONST API_VERSION          = 'v1';
