@@ -141,6 +141,9 @@
                     "ifMachine",
                     "ifMachineUrl",
                     "ifMachineMethod"
+                    "record",
+                    "recordCallbackUrl",
+                    "recordDirection"
                 ],
                 "nesting": [
                     "Number",
