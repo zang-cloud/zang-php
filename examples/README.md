@@ -5,32 +5,31 @@ In order to run files located under this path you will need to follow a few shor
 Once you choose the desired example you will need to:
 
 #### Step 1 - Change credentials
-
-Every example file contains the following block of the code:
+Set credentials in <path to application>/configuration/application.config.php or
+Every example file contains the following block of the code where it is possible to set 
+credentials 
 
 ```php
-# A 36 character long AccountSid is always required. It can be described
-# as the username for your account
-$account_sid = '{AccountSid}';
-
-# A 34 character long AuthToken is always required. It can be described
-# as your account's password
-$auth_token  = '{AuthToken}';
+$sipIpAccessControlList -> setOptions(array(
+        "account_sid"   => {AccountSid},
+        "auth_token"    => {AuthToken},
+    ));
 ```
 
-`{AccountSid}` and `{AuthToken}` must be replaced with real credentials which you can find at [Zang dashboard](https://www.zang.io/dashboard)
+`{AccountSid}` and `{AuthToken}` must be replaced with real credentials which you can find at [Zang dashboard](https://accounts.zang.io/#/dashboard)
 
 
 #### Step 2 - Change parameters ( if needed )
 
-if you are trying to run the [Send SMS](https://github.com/Zang/zang-php/blob/master/examples/send-sms.php) example you will need to update following block of the code:
+if you are trying to run Send SMS example you will need to update following block of the code:
 
 ```php
-$sms_message = $zang->create('sms_messages', array(
-    'From' => '(XXX) XXX-XXXX',
-    'To'   => '(XXX) XXX-XXXX',
-    'Body' => "This is an SMS message sent from the Zang PHP wrapper! Easy as 1, 2, 3!"
-));
+$sentSms = $sms -> sendSms(array(
+        'From'          => '(XXX) XXX-XXXX',
+        'To'            => '(XXX) XXX-XXXX',
+        'Body'          => "This is a test message.",
+        'AllowMultiple' => "False"
+    ));
 ```
 
 where `From` and `To` must be valid phone numbers.

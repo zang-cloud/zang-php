@@ -1,0 +1,306 @@
+{
+    "version" : "0.0.4",
+    "rest_api" : {
+        "components" : {
+            "accounts"                : "Accounts",
+            "calls"                   : "Calls",
+            "conferences"             : "Conferences",
+            "sms_messages"            : "SMS/Messages",
+            "recordings"              : "Recordings",
+            "transcriptions"          : "Transcriptions",
+            "notifications"           : "Notifications",
+            "available_phone_numbers" : "AvailablePhoneNumbers",
+            "incoming_phone_numbers"  : "IncomingPhoneNumbers",
+            "carrier"                 : "Lookups/Carrier",
+            "cnam"                    : "Lookups/Cnam",
+            "bna"                     : "Lookups/Bna",
+            "applications"            : "Applications",
+            "fraud"                   : "Fraud",
+            "fraud_block"             : "Fraud/Block",
+            "fraud_authorize"         : "Fraud/Authorize",
+            "fraud_extend"            : "Frauds/Extend",
+            "fraud_whitelist"         : "Fraud/Whitelist",
+            "usages"                  : "Usages",
+            "rates"                   : "Rates",
+            "connect"                 : "Connect",
+            "sip_domains"             : "SIP/Domains",
+            "sip_credentials"         : "SIP/CredentialLists",
+            "sip_ipacl"               : "SIP/IpAccessControlLists"
+        },
+
+        "pagination" : [
+            "page", "num_pages", "page_size", "total", "start", "end",
+            "uri", "first_page_uri", "previous_page_uri", "next_page_uri",
+            "last_page_uri"   
+        ]
+    },
+    
+    "inboundxml" : {
+        "verbs": {
+            "Response": {
+                "attributes": [
+                    "statusCallback",
+                    "statusMethod",
+                    "heartbeatCallback",
+                    "heartbeatMethod"
+                ],
+                "nesting": [
+                    "Say",
+                    "Play",
+                    "Answer",
+                    "Gather",
+                    "GetSpeech",
+                    "Record",
+                    "PlayLastRecording",
+                    "Dial",
+                    "Hangup",
+                    "Ping",
+                    "Redirect",
+                    "Reject",
+                    "Pause",
+                    "Sms"
+                ],
+                "docs_url": "http://docs.zang.io/docs/response",
+                "blank": false
+            },
+            "Conference": {
+                "attributes": [
+                    "muted",
+                    "beep",
+                    "startConferenceOnEnter",
+                    "endConferenceOnExit",
+                    "maxParticipants",
+                    "timeLimit",
+                    "waitUrl",
+                    "waitMethod",
+                    "waitSound",
+                    "hangupOnStar",
+                    "callbackUrl",
+                    "callbackMethod",
+                    "method",
+                    "digitsMatch",
+                    "stayAlone",
+                    "record",
+                    "recordCallbackUrl",
+                    "recordFileFormat",
+                    "recordCallbackMethod"
+                ],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs/conference",
+                "blank": false
+            },
+            "Dial": {
+                "attributes": [
+                    "action",
+                    "hangupOnStar",
+                    "method",
+                    "timeout",
+                    "timeLimit",
+                    "callerId",
+                    "hideCallerId",
+                    "callerName",
+                    "dialMusic",
+                    "callbackUrl",
+                    "callbackMethod",
+                    "confirmSound",
+                    "digitsMatch",
+                    "straightToVm",
+                    "heartbeatUrl",
+                    "heartbeatMethod",
+                    "forwardedFrom",
+                    "ifMachine",
+                    "ifMachineUrl",
+                    "ifMachineMethod",
+                    "record",
+                    "recordDirection",
+                    "recordCallbackUrl",
+                    "recordLifetime",
+                    "recordFormat"
+                ],
+                "nesting": [
+                    "Number",
+                    "Conference",
+                    "Sip",
+                    "User"
+                ],
+                "docs_url": "http://docs.zang.io/docs/dial",
+                "blank": false
+            },
+            "Gather": {
+                "attributes": [
+                    "action",
+                    "method",
+                    "finishOnKey",
+                    "timeout",
+                    "numDigits"
+                ],
+                "nesting": [
+                    "Say",
+                    "Play",
+                    "Pause",
+                    "PlayLastRecording"
+                ],
+                "docs_url": "http://docs.zang.io/docs/gather",
+                "blank": true
+            },
+            "GetSpeech": {
+                "attributes": [
+                    "grammar",
+                    "action",
+                    "method",
+                    "timeout",
+                    "playBeep"
+                ],
+                "nesting": [
+                    "Say",
+                    "Play",
+                    "Pause",
+                    "PlayLastRecording"
+                ],
+                "docs_url": "http: //www.docs.zang.io/docs/api/inboundxml/voice/getspeech/",
+                "blank": false
+            },
+            "Hangup": {
+                "attributes": [
+                    "schedule",
+                    "reason"
+                ],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs/hangup",
+                "blank": false
+            },
+            "Number": {
+                "attributes": [
+                    "sendDigits",
+                    "method",
+                    "url",
+                    "sendOnPreanswer"
+                ],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs/number",
+                "blank": false
+            },
+            "User": {
+                "attributes": [
+                    "sendDigits",
+                    "params"
+                ],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs",
+                "blank": false
+            },
+            "Pause": {
+                "attributes": [
+                    "length"
+                ],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs/pause",
+                "blank": true
+            },
+            "Ping": {
+                "attributes": [
+                    "method"
+                ],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs/ping",
+                "blank": true
+            },
+            "Play": {
+                "attributes": [
+                    "loop"
+                ],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs/play",
+                "blank": false
+            },
+            "PlayLastRecording": {
+                "attributes": [],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs/playlastrecording",
+                "blank": true
+            },
+            "Answer": {
+                "attributes": [],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs/playlastrecording",
+                "blank": true
+            },
+            "Record": {
+                "attributes": [
+                    "action",
+                    "method",
+                    "timeout",
+                    "finishOnKey",
+                    "maxLength",
+                    "transcribe",
+                    "transcribeCallback",
+                    "transcribeQuality",
+                    "sliceStart",
+                    "sliceDuration",
+                    "playBeep",
+                    "bothLegs",
+                    "direction",
+                    "fileFormat",
+                    "background",
+                    "trimSilence",
+                    "sampleRate",
+                    "lifetime"
+                ],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs/record",
+                "blank": true
+            },
+            "Redirect": {
+                "attributes": [
+                    "method"
+                ],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs/redirect",
+                "blank": true
+            },
+            "Reject": {
+                "attributes": [
+                    "reason"
+                ],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs/reject",
+                "blank": true
+            },
+            "Say": {
+                "attributes": [
+                    "voice",
+                    "loop",
+                    "language"
+                ],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs/say",
+                "blank": false
+            },
+            "Sip": {
+                "attributes": [
+                    "username",
+                    "password",
+                    "action",
+                    "method",
+                    "sendDigits"
+                ],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs/sip",
+                "blank": false
+            },
+            "Sms": {
+                "attributes": [
+                    "to",
+                    "from",
+                    "action",
+                    "method",
+                    "statusCallback",
+                    "statusCallbackMethod"
+                ],
+                "nesting": [],
+                "docs_url": "http://docs.zang.io/docs/sms",
+                "blank": false
+            }
+        }
+    }
+}

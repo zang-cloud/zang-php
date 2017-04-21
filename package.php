@@ -3,7 +3,7 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
 
 /**
- * This is the package.xml generator for Zang
+ * This is the package.xml generator for ZangApi
  *
  * PHP version 5
  *
@@ -24,9 +24,9 @@
  * limitations under the License.
  *
  * @category  Zang
- * @package   Zang
+ * @package   ZangApi
  * @author    Nevio Vesic <nevio@zang.io>
- * @copyright 2012 Zang
+ * @copyright 2017 Zang
  * @license   http://creativecommons.org/licenses/MIT/
  */
 
@@ -60,8 +60,8 @@ $package->setOptions(
         'dir_roles'               => array(
             'schemas'  => 'data',
             'library'  => 'php',
-            'library/Zang' => 'php'
-
+            'library/ZangApi' => 'php'
+            
         ),
         'ignore'                  => array(
             'examples/*',
@@ -82,7 +82,7 @@ $package->setOptions(
     )
 );
 
-$package->setPackage('Zang');
+$package->setPackage('ZangApi');
 $package->setSummary('PHP helper library for Zang');
 $package->setDescription($description);
 $package->setChannel('pear.zang.io');
@@ -123,3 +123,4 @@ if (isset($_GET['make'])
 }
 
 ?>
+

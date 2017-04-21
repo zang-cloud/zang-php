@@ -3,3 +3,8 @@ nbproject/*
 *.php~
 *.gitignore~
 .DS_Store
+.idea
+composer.phar
+/vendor/
+composer.lock
+tests/reports/*
