@@ -42,6 +42,7 @@
             <file>UsageTest.php</file>
             <file>InboundXMLTest.php</file>
             <file>HelperTest.php</file>
+            <file>ConnectorLibTest.php</file>
         </testsuite>
     </testsuites>
     <filter>

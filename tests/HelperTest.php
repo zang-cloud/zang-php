@@ -37,6 +37,10 @@ final class HelperTest extends TestCase {
     }
 
     public function testFilterInternationalNumberWithout011Prefix(){
-        $this -> assertEquals("+14155552671", Zang_Helpers::filter_e164("415 555 2671"));
+        $this -> assertEquals("+38531415555", Zang_Helpers::filter_e164("385 31 415 555"));
+    }
+
+    public function testFilterEmpty(){
+        $this -> assertEquals("", Zang_Helpers::filter_e164("12"));
     }
 }

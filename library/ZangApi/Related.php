@@ -13,8 +13,8 @@
  * @copyright (2017) Zang
  */
 
-$appRoot = dirname(dirname( dirname(__FILE__ )));
-require_once $appRoot . "/configuration/applications.config.php";
+//$appRoot = dirname(dirname( dirname(__FILE__ )));
+//require_once $appRoot . "/configuration/applications.config.php";
 
 
 abstract class Zang_Related
@@ -178,7 +178,7 @@ abstract class Zang_Related
      */
     function get($component, Array $parameters=array()) {
         return new Zang_Connector($this->_execute(
-            rtrim($this->_buildBaseUrl() . $this->_buildUrl($component, $parameters), '/') . '.' . self::WRAPPER_JSON
+            rtrim($this->_buildBaseUrl() . $this->_buildUrl($component, $parameters), '/') . '.' . $this->option("wrapper_type")
             .
             $this->_buildParameters($parameters)
          ), $this->option('response_to_array'), $this->_component);
@@ -194,7 +194,7 @@ abstract class Zang_Related
      * @return Zang_Connector
      */
     function create($component, Array $data) {
-        $creation_url = rtrim($this->_buildBaseUrl() . $this->_buildUrl($component, array()), '/') . '.' . self::WRAPPER_JSON;
+        $creation_url = rtrim($this->_buildBaseUrl() . $this->_buildUrl($component, array()), '/') . '.' . $this->option("wrapper_type");
         $post_params  = $this->_buildPostParameters($data);
         return new Zang_Connector($this->_execute($creation_url, 'POST', $post_params), $this->option('response_to_array'), $this->_component);
     }
@@ -208,7 +208,7 @@ abstract class Zang_Related
      * @return Zang_Connector
      */
     function update($component, Array $data) {
-        $creation_url = rtrim($this->_buildBaseUrl() . $this->_buildUrl($component, array()), '/') . '.' . self::WRAPPER_JSON;
+        $creation_url = rtrim($this->_buildBaseUrl() . $this->_buildUrl($component, array()), '/') . '.' . $this->option("wrapper_type");
         $post_params  = $this->_buildPostParameters($data);
         return new Zang_Connector($this->_execute($creation_url, 'POST', $post_params), $this->option('response_to_array'), $this->_component);
     }
@@ -224,7 +224,7 @@ abstract class Zang_Related
      * @return Zang_Connector
      */
     function delete($component) {
-        $creation_url = rtrim($this->_buildBaseUrl() . $this->_buildUrl($component, array()), '/') . '.' . self::WRAPPER_JSON;
+        $creation_url = rtrim($this->_buildBaseUrl() . $this->_buildUrl($component, array()), '/') . '.' . $this->option("wrapper_type");
         return new Zang_Connector($this->_execute($creation_url, 'DELETE', ''), $this->option('response_to_array'), $this->_component);
     }
 

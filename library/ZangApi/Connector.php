@@ -174,7 +174,7 @@ class Zang_Connector
        
 
         # JSON will be validated only if you use PHP 5 >= 5.3.0
-	if( floatval(phpversion()) < 5.3) {
+	if( floatval(phpversion()) > 5.3) {
             if(function_exists('json_last_error')) {
                 
                 $error  = $this->_validateJSON();
