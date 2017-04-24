@@ -100,10 +100,7 @@ final class InboundXMLTest extends TestCase {
             $inboundXml -> say( "test", array(
                 "voice" => "males"
             ));
-            $this -> assertEquals("<b>Errors Found!</b><br/>
-<b>Error 1840</b>: Element 'Say', attribute 'voice': [facet 'enumeration'] The value 'males' is not an element of the set {'female', 'male'}. in <b>/var/www/html/share/telapi-php/tests/</b> on line <b>2</b>
-<br/>
-<b>Error 1824</b>: Element 'Say', attribute 'voice': 'males' is not a valid value of the atomic type 'say_voice'. in <b>/var/www/html/share/telapi-php/tests/</b> on line <b>2</b>", $inboundXml -> __toString());
+            $this -> assertRegexp("Element 'Say', attribute 'voice': 'males' is not a valid value of the atomic type 'say_voice'.", $inboundXml -> __toString());
         } catch (ZangException $e){
             $this -> assertEquals("InboindXML did not pass validation!", $e ->getMessage());
         }
