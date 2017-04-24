@@ -19,10 +19,10 @@ define( 'ACCOUNT_SID', "TestAccountSid" );
 define( 'AUTH_TOKEN', "TestToken" );
 
 #Zang API URL. Default value is "https://api.zang.io/v2/".
-define( 'API_URL', "http://localhost/" );
+define( 'API_URL', "https://api.zang.io/v2/" );
 
 #Zang API URL port. If default URL is used application automatically set appropriate port and API_PORT value should be empty.
 #If URL is set to "https://...." applications automatically set port 443. If you wish to override this value define new below.
 #If URL is set to "http://...." applications automatically set port 80. If you wish to override this value define new below.
 #If URL is set to some other value please define port to use!
-define( "API_PORT", "1080" );
+define( "API_PORT", "" );
