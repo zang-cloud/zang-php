@@ -65,8 +65,8 @@ try {
     # Credentials can be set in <path to application>/configuration/application.config.php and be used 
     # as is shown below or could be set to some custom value
     $sms -> setOptions(array(
-        "account_sid"   => ACCOUNT_SID,
-        "auth_token"    => AUTH_TOKEN,
+        "account_sid"   => $_ENV["ACCOUNT_SID"],
+        "auth_token"    => $_ENV["AUTH_TOKEN"],
     ));
 
     # NOTICE: The code below will send a new SMS message.

@@ -9,7 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 $applicationRoot = dirname( dirname(__FILE__ ) );
 
-require_once $applicationRoot . "/configuration/applications.config.php";
 require_once $applicationRoot . "/connectors/Notifications.php";
 
 /**
@@ -24,8 +23,8 @@ final class NotificationsTest extends TestCase {
 
     public function testListNotification(){
         $instance = Notifications::getInstance(array(
-            "account_sid" => ACCOUNT_SID,
-            "auth_token" => AUTH_TOKEN
+            "account_sid" => $_ENV["ACCOUNT_SID"],
+            "auth_token" => $_ENV["AUTH_TOKEN"]
         ));
         $res = $instance->listNotifications(array(
             "Log" => "2",

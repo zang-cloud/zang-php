@@ -15,14 +15,14 @@ if( floatval(phpversion()) < 5.2) {
 
 $appRoot = dirname( dirname(__FILE__ ) );
 
+/** @see ZangException */
+require_once $appRoot . '/library/ZangApi/ZangException.php';
+
 /** @see Application config **/
-require_once $appRoot . '/configuration/applications.config.php';
+require_once $appRoot . '/library/configHelper.php';
 
 /** @see Zang_Helpers **/
 require_once $appRoot . '/library/ZangApi/Helpers.php';
-
-/** @see ZangException */
-require_once $appRoot . '/library/ZangApi/ZangException.php';
 
 /** @see Zang_Schemas */
 require_once $appRoot . '/library/ZangApi/Schemas.php';
@@ -60,10 +60,10 @@ class Conferences extends Zang_Related {
     static function getInstance( Array $options=array() ) {
         if(is_null(self::$_instance)) {
             self::$_instance = new self();
-            if( (defined("ACCOUNT_SID") && ACCOUNT_SID != "") && (defined("AUTH_TOKEN") && AUTH_TOKEN != "") ){
+            if( (isset($_ENV['ACCOUNT_SID']) && $_ENV['ACCOUNT_SID'] != "") && (isset($_ENV["AUTH_TOKEN"]) && $_ENV["AUTH_TOKEN"] != "") ){
                 self::$_instance -> setOptions(array(
-                    "account_sid"   => ACCOUNT_SID,
-                    "auth_token"    => AUTH_TOKEN,
+                    "account_sid"   => $_ENV['ACCOUNT_SID'],
+                    "auth_token"    => $_ENV["AUTH_TOKEN"],
                 ));
             }
         }

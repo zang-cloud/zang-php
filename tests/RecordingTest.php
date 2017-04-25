@@ -9,7 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 $applicationRoot = dirname( dirname(__FILE__ ) );
 
-require_once $applicationRoot . "/configuration/applications.config.php";
 require_once $applicationRoot . "/connectors/Recordings.php";
 
 /**
@@ -24,8 +23,8 @@ final class RecordingTest extends TestCase {
 
     public function testListRecordings(){
         $instance = Recordings::getInstance(array(
-            "account_sid" => ACCOUNT_SID,
-            "auth_token" => AUTH_TOKEN
+            "account_sid" => $_ENV["ACCOUNT_SID"],
+            "auth_token" => $_ENV["AUTH_TOKEN"]
         ));
         $res = $instance->listRecordings(array(
             "CallSid" => "TestCallSid",

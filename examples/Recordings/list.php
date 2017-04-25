@@ -23,8 +23,8 @@ try {
     # Credentials can be set in <path to application>/configuration/application.config.php and then connectors
     # automatically use it when getInstance is called but it is possible to set options in this way:
     $recordings -> setOptions(array(
-        "account_sid"   => ACCOUNT_SID,
-        "auth_token"    => AUTH_TOKEN,
+        "account_sid"   => $_ENV["ACCOUNT_SID"],
+        "auth_token"    => $_ENV["AUTH_TOKEN"],
     ));
 
     $result = $recordings->listRecordings(array(

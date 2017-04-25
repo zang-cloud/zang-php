@@ -9,7 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 $applicationRoot = dirname( dirname(__FILE__ ) );
 
-require_once $applicationRoot . "/configuration/applications.config.php";
 require_once $applicationRoot . "/connectors/Sms.php";
 
 /**
@@ -25,8 +24,8 @@ final class ConnectorLibTest extends TestCase {
     public function testBadCredentials(){
         try {
             $instance = Sms::getInstance(array(
-                "account_sid" => "test",
-                "auth_token" => "test"
+                "account_sid" => $_ENV["ACCOUNT_SID"],
+                "auth_token" => $_ENV["AUTH_TOKEN"]
             ));
             $res = $instance->listSMS();
         }catch (Exception $e){
@@ -36,8 +35,8 @@ final class ConnectorLibTest extends TestCase {
 
     public function testMethodsTest(){
             $smsInstance = Sms::getInstance(array(
-                "account_sid" => ACCOUNT_SID,
-                "auth_token" => AUTH_TOKEN,
+                "account_sid" => $_ENV["ACCOUNT_SID"],
+                "auth_token" => $_ENV["AUTH_TOKEN"],
                 "response_to_array" => true
             ));
             $res = $smsInstance->viewSms(array(

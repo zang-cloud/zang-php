@@ -22,9 +22,10 @@ try {
     # Take note that you cannot set non-existing options
     # Credentials can be set in <path to application>/configuration/application.config.php and then connectors
     # automatically use it when getInstance is called but it is possible to set options in this way:
+
     $sms -> setOptions(array(
-        "account_sid"   => ACCOUNT_SID,
-        "auth_token"    => AUTH_TOKEN,
+        "account_sid"   => $_ENV["ACCOUNT_SID"],
+        "auth_token"    => $_ENV["AUTH_TOKEN"],
     ));
 
     # NOTICE: The code below will get information for all user messages.

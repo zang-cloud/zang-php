@@ -29,23 +29,11 @@ abstract class Zang_Related
     /** Wrapper to return ZangAPI response as XML */
     CONST WRAPPER_TXT          = 'txt';
     
-    /** BASE ZangAPI URI */
-    CONST API_URL              = API_URL;
-    
-    
     /** 
      * Beginning component of the API request url. This will be built into the
      * url, so please avoid changing this if you want the wrapper to work! 
      */
     CONST API_START_COMPONENT  = 'Accounts';
-    
-    /**
-     * Available ZangAPI REST endpoint versions are:
-     * 
-     * @var array
-     */
-    protected $_availableVersions = array( 'v2' );
-
 
     /**
      * All available options which can be set for the wrapper itself.
@@ -242,7 +230,7 @@ abstract class Zang_Related
      */
     private function _buildBaseUrl() {
 
-        $return_url = self::API_URL;
+        $return_url = $_ENV["API_URL"];
         
         if(is_null($this->option('account_sid'))) {
             throw new ZangException(
@@ -382,7 +370,7 @@ abstract class Zang_Related
         
         if(substr($url, 0, 4) == 'http') $curl_port = 80;
         if(substr($url, 0, 5) == 'https') $curl_port = 443;
-        if( defined("API_PORT") && API_PORT != "" ) $curl_port = API_PORT;
+        if( isset($_ENV["API_PORT"]) && $_ENV["API_PORT"] != "" ) $curl_port = $_ENV["API_PORT"];
 
         if($resource = curl_init()) {
             $curl_opts = array(
