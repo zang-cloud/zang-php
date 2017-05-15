@@ -235,7 +235,7 @@ class Zang_InboundXML
         if (!$domDoc->schemaValidate(Zang_Helpers::getAppRootPath() . $this -> _xsdSchema )) {
             print '<b>Errors Found!</b>';
             $this -> libxml_display_errors();
-            throw new ZangException("InboindXML did not pass validation!");
+            throw new ZangException("InboundXML did not pass validation!");
         }
 
     }

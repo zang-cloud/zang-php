@@ -100,9 +100,9 @@ final class InboundXMLTest extends TestCase {
             $inboundXml -> say( "test", array(
                 "voice" => "males"
             ));
-            $this -> assertRegexp("Element 'Say', attribute 'voice': 'males' is not a valid value of the atomic type 'say_voice'.", $inboundXml -> __toString());
+            $this -> assertTrue(strpos($inboundXml -> __toString(), "Element 'Say', attribute 'voice': 'males' is not a valid value of the atomic type 'say_voice'.") !== false);
         } catch (ZangException $e){
-            $this -> assertEquals("InboindXML did not pass validation!", $e ->getMessage());
+            $this -> assertEquals("InboundXML did not pass validation!", $e ->getMessage());
         }
     }
 
