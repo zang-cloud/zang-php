@@ -42,7 +42,7 @@ Usage
 
 ### REST
 
-See the [Zang REST API documentation](http://docs.zang.io/docs/overview) for more information.
+See the [Zang REST API documentation](http://docs.zang.io/aspx/rest) for more information.
 ##### Configuration
 First set configuration parameters in "configuration/applications.config.php" file
 
@@ -102,7 +102,7 @@ try {
 
 ### InboundXML
 
-InboundXML is an XML dialect which enables you to control phone call flow. For more information please visit the [Zang InboundXML documentation](http://docs.zang.io/docs/inboundxml-overview).
+InboundXML is an XML dialect which enables you to control phone call flow. For more information please visit the [Zang InboundXML documentation](http://docs.zang.io/aspx/inboundxml).
 
 ##### <Say> Example
 
