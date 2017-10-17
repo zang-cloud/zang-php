@@ -60,6 +60,7 @@ abstract class Zang_Related
         'calls'                   => 'Calls',
         'conferences'             => 'Conferences',
         'sms_messages'            => 'SMS/Messages',
+        'mms_messages'            => 'MMS/Messages',
         'recordings'              => 'Recordings',
         'transcriptions'          => 'Transcriptions',
         'notifications'           => 'Notifications',
