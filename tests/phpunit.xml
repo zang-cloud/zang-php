@@ -32,6 +32,7 @@
             <file>ConferenceTest.php</file>
             <file>IncomingPhoneNumbersTest.php</file>
             <file>FraudControlTest.php</file>
+            <file>MmsTest.php</file>
             <file>NotificationsTest.php</file>
             <file>RecordingTest.php</file>
             <file>SipCredentialsTest.php</file>
