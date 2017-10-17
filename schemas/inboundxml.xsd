@@ -306,6 +306,7 @@
                 <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Reject"/>
                 <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Pause"/>
                 <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Sms"/>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Mms"/>
                 <xsd:element maxOccurs="unbounded" minOccurs="0" ref="GetSpeech"/>
             </xsd:choice>
             <xsd:attribute name="statusCallback" type="xsd:anyURI" use="optional"/>
@@ -329,6 +330,17 @@
             <xsd:attribute name="method" type="http_methods" use="optional"/>
             <xsd:attribute name="statusCallback" type="xsd:anyURI" use="optional"/>
             <xsd:attribute name="statusCallbackMethod" type="http_methods" use="optional"/>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Mms">
+        <xsd:complexType mixed="true">
+            <xsd:attribute name="to" type="xsd:string" use="required"/>
+            <xsd:attribute name="from" type="xsd:string" use="required"/>
+            <xsd:attribute name="action" type="xsd:anyURI" use="optional"/>
+            <xsd:attribute name="method" type="http_methods" use="optional"/>
+            <xsd:attribute name="statusCallback" type="xsd:anyURI" use="optional"/>
+            <xsd:attribute name="statusCallbackMethod" type="http_methods" use="optional"/>
+            <xsd:attribute name="mediaUrl" type="xsd:anyURI" use="required"/>
         </xsd:complexType>
     </xsd:element>
     <xsd:element name="Sip">
