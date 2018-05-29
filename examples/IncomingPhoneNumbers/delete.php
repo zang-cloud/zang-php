@@ -28,7 +28,7 @@ try {
     ));
 
     $result = $incomingPhoneNumber->deleteIncomingNumbers(array(
-        "IncomingNumberSid" => "{IncomingNumberSid}"
+        "IncomingPhoneNumberSid" => "{IncomingNumberSid}"
     ));
 
     # If you wish to get back the full response object/array then use:
