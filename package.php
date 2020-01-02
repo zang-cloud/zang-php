@@ -9,7 +9,7 @@
  *
  * LICENSE:
  *
- * Copyright 2012 Zang.
+ * Copyright 2020 Avaya Cloud Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@
  * @category  Zang
  * @package   ZangApi
  * @author    Nevio Vesic <nevio@zang.io>
- * @copyright 2017 Zang
+ * @copyright 2020 Avaya Cloud Inc
  * @license   http://creativecommons.org/licenses/MIT/
  */
 
