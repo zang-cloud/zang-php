@@ -2,7 +2,7 @@
 zang-php
 ==========
 
-This PHP library is an open source tool built to simplify interaction with the [Avaya CPaaS](http://www.zang.io) telephony platform. Zang makes adding voice and SMS to applications fun and easy.
+This PHP library is an open source tool built to simplify interaction with the [Avaya CPaaS](http://www.zang.io) telephony platform. Avaya CPaaS makes adding voice and SMS to applications fun and easy.
 
 For more information about Avaya CPaaS, please visit: [Avaya OneCloud™️ CPaaS ](http://zang.io/products/cloud)
 
@@ -49,7 +49,7 @@ First set configuration parameters in "configuration/applications.config.php" fi
 ##### Send SMS Example
 
 ```php
-# First we must import the actual Zang library
+# First we must import the actual Avaya CPaaS library
 require_once '../connectors/Sms.php';
 
 # If an error occurs, Zang_Exception will be raised. Due to this,
@@ -102,14 +102,14 @@ try {
 
 ### InboundXML
 
-InboundXML is an XML dialect which enables you to control phone call flow. For more information please visit the [Zang InboundXML documentation](http://docs.zang.io/aspx/inboundxml).
+InboundXML is an XML dialect which enables you to control phone call flow. For more information please visit the [Avaya CPaaS InboundXML documentation](http://docs.zang.io/aspx/inboundxml).
 
 ##### <Say> Example
 
 ```php
 <?php
 
-# First we must import the actual Zang library
+# First we must import the actual Avaya CPaaS library
 require_once "../library/ZangApi/InboundXML.php";
 
 # If an error occurs, Zang_Exception will be raised. Due to this,
