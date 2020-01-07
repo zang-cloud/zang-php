@@ -103,7 +103,7 @@ class SipDomains extends Zang_Related {
     /**
      * create new SIP domain
      * @param $reqData array {
-     *      @type string $reqData['DomainName'][An address on Zang uniquely associated with your account and through which all your SIP traffic is routed.]
+     *      @type string $reqData['DomainName'][An address on Avaya CPaaS uniquely associated with your account and through which all your SIP traffic is routed.]
      *      @type string $reqData['FriendlyName'][A human-readable name associated with this domain.]
      *      @type string $reqData['VoiceUrl'][The URL requested when a call is received by your domain.]
      *      @type string $reqData['VoiceMethod'][The HTTP method used when requesting the VoiceUrl.]
@@ -111,7 +111,7 @@ class SipDomains extends Zang_Related {
      *      @type string $reqData['VoiceFallbackMethod'][The HTTP method used when requesting the VoiceFallbackUrl.]
      *      @type string $reqData['HeartbeatUrl'][URL that can be requested every 60 seconds during the call to notify of elapsed time and pass other general information.]
      *      @type string $reqData['HeartbeatMethod'][POST|Specifies the HTTP method used to request HeartbeatUrl.]
-     *      @type string $reqData['VoiceStatusCallback'][The URL that Zang will use to send you status notifications regarding your SIP call.]
+     *      @type string $reqData['VoiceStatusCallback'][The URL that Avaya CPaaS will use to send you status notifications regarding your SIP call.]
      *      @type string $reqData['VoiceStatusCallbackMethod'][The HTTP method used when requesting the VoiceStatusCallback.]
      * }
      * @return Zang_Connector
@@ -128,7 +128,7 @@ class SipDomains extends Zang_Related {
      * updates SIP domain
      * @param $reqData array {
      *      @type string $reqData['DomainSid'][Domain SID]
-     *      @type string $reqData['DomainName'][An address on Zang uniquely associated with your account and through which all your SIP traffic is routed.]
+     *      @type string $reqData['DomainName'][An address on Avaya CPaaS uniquely associated with your account and through which all your SIP traffic is routed.]
      *      @type string $reqData['FriendlyName'][A human-readable name associated with this domain.]
      *      @type string $reqData['VoiceUrl'][The URL requested when a call is received by your domain.]
      *      @type string $reqData['VoiceMethod'][The HTTP method used when requesting the VoiceUrl.]
@@ -136,7 +136,7 @@ class SipDomains extends Zang_Related {
      *      @type string $reqData['VoiceFallbackMethod'][The HTTP method used when requesting the VoiceFallbackUrl.]
      *      @type string $reqData['HeartbeatUrl'][URL that can be requested every 60 seconds during the call to notify of elapsed time and pass other general information.]
      *      @type string $reqData['HeartbeatMethod'][POST|Specifies the HTTP method used to request HeartbeatUrl.]
-     *      @type string $reqData['VoiceStatusCallback'][The URL that Zang will use to send you status notifications regarding your SIP call.]
+     *      @type string $reqData['VoiceStatusCallback'][The URL that Avaya CPaaS will use to send you status notifications regarding your SIP call.]
      *      @type string $reqData['VoiceStatusCallbackMethod'][The HTTP method used when requesting the VoiceStatusCallback.]
      * }
      * @return Zang_Connector

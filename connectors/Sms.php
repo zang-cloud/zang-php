@@ -79,7 +79,7 @@ class Sms extends Zang_Related {
      * sends SMS message
      * @param array $reqData {
      *      @type string  $reqData['To'] [Must be an SMS capable number. The value does not have to be in any specific format.]
-     *      @type string  $reqData['From'] [Must be a Zang number associated with your account. The value does not have to be in any specific format.]
+     *      @type string  $reqData['From'] [Must be a Avaya CPaaS number associated with your account. The value does not have to be in any specific format.]
      *      @type string  $reqData['Body'] [Text of the SMS to be sent.]
      *      @type string  $reqData['StatusCallback'] [The URL that will be sent information about the SMS. Url length is limited to 200 characters.]
      *      @type string  $reqData['StatusCallbackMethod'] [POST|The HTTP method used to request the StatusCallback. Valid parameters are GET and POST.]

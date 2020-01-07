@@ -46,7 +46,7 @@ $release_state   = 'stable';
 $release_notes   = 'Adding PEAR package improvements';
 
 $description = <<<DESC
-Zang PHP wrapper is an open source tool built for easy access to the zang.io API infrastructure. Zang is a powerful cloud communications API built to enable your apps to send and receive SMS messages and phone calls — all while controlling the call flow. Some features are conferencing, phone calls, text-to-speech, recordings, transcriptions and much more.
+Avaya CPaaS PHP wrapper is an open source tool built for easy access to the zang.io API infrastructure. Avaya CPaaS is a powerful cloud communications API built to enable your apps to send and receive SMS messages and phone calls — all while controlling the call flow. Some features are conferencing, phone calls, text-to-speech, recordings, transcriptions and much more.
 DESC;
 
 $package = new PEAR_PackageFileManager2();
