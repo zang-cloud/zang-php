@@ -16,7 +16,7 @@ $sipIpAccessControlList -> setOptions(array(
     ));
 ```
 
-`{AccountSid}` and `{AuthToken}` must be replaced with real credentials which you can find at [Zang dashboard](https://accounts.zang.io/#/dashboard)
+`{AccountSid}` and `{AuthToken}` must be replaced with real credentials which you can find at [Avaya CPaaS dashboard](https://accounts.zang.io/#/dashboard)
 
 
 #### Step 2 - Change parameters ( if needed )

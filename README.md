@@ -2,11 +2,11 @@
 zang-php
 ==========
 
-This PHP library is an open source tool built to simplify interaction with the [Zang](http://www.zang.io) telephony platform. Zang makes adding voice and SMS to applications fun and easy.
+This PHP library is an open source tool built to simplify interaction with the [Avaya CPaaS](http://www.zang.io) telephony platform. Avaya CPaaS makes adding voice and SMS to applications fun and easy.
 
-For more information about Zang, please visit: [Zang Cloud](http://zang.io/products/cloud)
+For more information about Avaya CPaaS, please visit: [Avaya OneCloud™️ CPaaS ](http://zang.io/products/cloud)
 
-To read the official documentation visit [Zang Docs](http://docs.zang.io/aspx/docs)
+To read the official documentation visit [Avaya CPaaS Docs](http://docs.zang.io/aspx/docs)
 
 
 ---
@@ -42,14 +42,14 @@ Usage
 
 ### REST
 
-See the [Zang REST API documentation](http://docs.zang.io/aspx/rest) for more information.
+See the [Avaya CPaaS REST API documentation](http://docs.zang.io/aspx/rest) for more information.
 ##### Configuration
 First set configuration parameters in "configuration/applications.config.php" file
 
 ##### Send SMS Example
 
 ```php
-# First we must import the actual Zang library
+# First we must import the actual Avaya CPaaS library
 require_once '../connectors/Sms.php';
 
 # If an error occurs, Zang_Exception will be raised. Due to this,
@@ -102,14 +102,14 @@ try {
 
 ### InboundXML
 
-InboundXML is an XML dialect which enables you to control phone call flow. For more information please visit the [Zang InboundXML documentation](http://docs.zang.io/aspx/inboundxml).
+InboundXML is an XML dialect which enables you to control phone call flow. For more information please visit the [Avaya CPaaS InboundXML documentation](http://docs.zang.io/aspx/inboundxml).
 
 ##### <Say> Example
 
 ```php
 <?php
 
-# First we must import the actual Zang library
+# First we must import the actual Avaya CPaaS library
 require_once "../library/ZangApi/InboundXML.php";
 
 # If an error occurs, Zang_Exception will be raised. Due to this,
@@ -118,7 +118,7 @@ try {
     # Now what we need to do is instantiate the library
     $inboundXml = new Zang_InboundXML();
 
-    $inboundXml -> say( "Welcome to Zang. This is a sample InboundXML document.", array(
+    $inboundXml -> say( "Welcome to Avaya CPaaS. This is a sample InboundXML document.", array(
         "voice" => "male"
     ));
 
@@ -138,7 +138,7 @@ will render
 
 ```xml
 <?xml version="1.0"?>
-<Response><Say voice="male">Welcome to Zang. This is a sample InboundXML document.</Say></Response>
+<Response><Say voice="male">Welcome to Avaya CPaaS. This is a sample InboundXML document.</Say></Response>
 
 ```
 
