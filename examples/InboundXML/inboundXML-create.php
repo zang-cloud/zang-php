@@ -39,8 +39,18 @@ try
         "method"=>"GET"
     ));
 
+    echo "\nINBOUND XML SAMPLE:\n\n";
     # If you wish to get back validated Inbound XML as string then use:
     echo $inboundXml;
+    echo "\n\nCONNECT VERB SAMPLE:\n\n";
+
+    $connectXml = new Zang_InboundXML();
+    $connectXml->connect("", array(
+        "action" => "http://example.com/example-callback-url/say?example=simple.xml",
+        "method" => "POST"
+    ))->agent("1234", array());
+
+    echo $connectXml;
 
 }catch(Exception $e){
     echo $e->getMessage();
