@@ -60,7 +60,8 @@
                     "Reject",
                     "Pause",
                     "Sms",
-                    "Mms"
+                    "Mms",
+                    "Connect"
                 ],
                 "docs_url": "http://docs.zang.io/docs/response",
                 "blank": false
@@ -147,6 +148,23 @@
                 ],
                 "docs_url": "http://docs.zang.io/docs/gather",
                 "blank": true
+            },
+            "Agent": {
+                "attributes": [],
+                "nesting": [],
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml/agent",
+                "blank": false
+            },
+            "Connect": {
+                "attributes": [
+                    "action",
+                    "method"
+                ],
+                "nesting": [
+                    "Agent"
+                ],
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml/connect",
+                "blank": false
             },
             "GetSpeech": {
                 "attributes": [

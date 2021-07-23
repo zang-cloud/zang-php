@@ -33,6 +33,18 @@ final class InboundXMLTest extends TestCase {
         $this->checkResponse($inboundXml->__toString());
     }
 
+    public function testCreateConnectInboundXML(){
+        $inboundXml = new Zang_InboundXML();
+        $inboundXml->connect("", array(
+            "action" => "http://example.com/example-callback-url/say?example=simple.xml",
+            "method" => "POST"
+        ))->agent("1234", array());
+
+        $this -> assertXmlStringEqualsXmlString('<?xml version="1.0"?>
+        <Response><Connect action="http://example.com/example-callback-url/say?example=simple.xml" method="POST"><Agent>1234</Agent></Connect></Response>'
+        , $inboundXml->__toString());
+    }
+
     public function testCreateInboundXMLInvalidName(){
         try {
             $inboundXml = new Zang_InboundXML("<Response>");
@@ -58,7 +70,7 @@ final class InboundXMLTest extends TestCase {
                 "voice" => "male"
             ));
         } catch (Exception $e){
-            $this -> assertEquals("InboundXML element 'Response' does not support 'Conference' element. The following elements are supported: 'Say, Play, Answer, Gather, GetSpeech, Record, PlayLastRecording, Dial, Hangup, Ping, Redirect, Reject, Pause, Sms'.", $e ->getMessage());
+            $this -> assertEquals("InboundXML element 'Response' does not support 'Conference' element. The following elements are supported: 'Say, Play, Answer, Gather, GetSpeech, Record, PlayLastRecording, Dial, Hangup, Ping, Redirect, Reject, Pause, Sms, Mms, Connect'.", $e ->getMessage());
         }
     }
 
@@ -73,7 +85,7 @@ final class InboundXMLTest extends TestCase {
                 "voice" => "male"
             ));
         } catch (Exception $e){
-            $this -> assertEquals("Verb 'Dialing' is not a valid InboundXML verb. Available verbs are: 'Response, Conference, Dial, Gather, GetSpeech, Hangup, Number, User, Pause, Ping, Play, PlayLastRecording, Answer, Record, Redirect, Reject, Say, Sip, Sms'", $e ->getMessage());
+            $this -> assertEquals("Verb 'Dialing' is not a valid InboundXML verb. Available verbs are: 'Response, Conference, Dial, Gather, Agent, Connect, GetSpeech, Hangup, Mms, Number, User, Pause, Ping, Play, PlayLastRecording, Answer, Record, Redirect, Reject, Say, Sip, Sms'", $e ->getMessage());
         }
     }
 
