@@ -45,6 +45,24 @@ final class InboundXMLTest extends TestCase {
         , $inboundXml->__toString());
     }
 
+    public function testCreateReferInboundXML(){
+        $inboundXml = new Zang_InboundXML();
+        $inboundXml->refer("", array(
+            "action" => "http://example.com/example-callback-url/say?example=simple.xml",
+            "method" => "POST",
+            "timeout" => 180,
+            "callbackUrl" => "http://example.com/example-callback-url/say?example=simple.xml",
+            "callbackMethod" => "POST"
+        ))->sip("username@example.com", array(
+            "username" => "username",
+            "password" => "pass"
+        ));
+
+        $this -> assertXmlStringEqualsXmlString('<?xml version="1.0"?>
+        <Response><Refer action="http://example.com/example-callback-url/say?example=simple.xml" method="POST" timeout="180" callbackUrl="http://example.com/example-callback-url/say?example=simple.xml" callbackMethod="POST"><Sip username="username" password="pass">username@example.com</Sip></Refer></Response>'
+        , $inboundXml->__toString());
+    }
+
     public function testCreateInboundXMLInvalidName(){
         try {
             $inboundXml = new Zang_InboundXML("<Response>");
