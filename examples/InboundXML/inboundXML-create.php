@@ -52,6 +52,22 @@ try
 
     echo $connectXml;
 
+    echo "\n\nRefer VERB SAMPLE:\n\n";
+
+    $referXml = new Zang_InboundXML();
+    $referXml->refer("", array(
+        "action" => "http://example.com/example-callback-url/say?example=simple.xml",
+        "method" => "POST",
+        "timeout" => 180,
+        "callbackUrl" => "http://example.com/example-callback-url/say?example=simple.xml",
+        "callbackMethod" => "POST"
+    ))->sip("username@example.com", array(
+        "username" => "username",
+        "password" => "pass"
+    ));
+
+    echo $referXml;
+
 }catch(Exception $e){
     echo $e->getMessage();
     echo "<br><pre>";

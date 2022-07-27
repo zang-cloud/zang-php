@@ -54,6 +54,7 @@
                     "Record",
                     "PlayLastRecording",
                     "Dial",
+                    "Refer",
                     "Hangup",
                     "Ping",
                     "Redirect",
@@ -127,6 +128,20 @@
                     "User"
                 ],
                 "docs_url": "http://docs.zang.io/docs/dial",
+                "blank": false
+            },
+            "Refer": {
+                "attributes": [
+                    "action",
+                    "method",
+                    "timeout",
+                    "callbackUrl",
+                    "callbackMethod"
+                ],
+                "nesting": [
+                    "Sip"
+                ],
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml/refer",
                 "blank": false
             },
             "Gather": {
