@@ -45,6 +45,24 @@ final class InboundXMLTest extends TestCase {
         , $inboundXml->__toString());
     }
 
+    public function testCreateReferInboundXML(){
+        $inboundXml = new Zang_InboundXML();
+        $inboundXml->refer("", array(
+            "action" => "http://example.com/example-callback-url/say?example=simple.xml",
+            "method" => "POST",
+            "timeout" => 180,
+            "callbackUrl" => "http://example.com/example-callback-url/say?example=simple.xml",
+            "callbackMethod" => "POST"
+        ))->sip("username@example.com", array(
+            "username" => "username",
+            "password" => "pass"
+        ));
+
+        $this -> assertXmlStringEqualsXmlString('<?xml version="1.0"?>
+        <Response><Refer action="http://example.com/example-callback-url/say?example=simple.xml" method="POST" timeout="180" callbackUrl="http://example.com/example-callback-url/say?example=simple.xml" callbackMethod="POST"><Sip username="username" password="pass">username@example.com</Sip></Refer></Response>'
+        , $inboundXml->__toString());
+    }
+
     public function testCreateInboundXMLInvalidName(){
         try {
             $inboundXml = new Zang_InboundXML("<Response>");
@@ -70,7 +88,7 @@ final class InboundXMLTest extends TestCase {
                 "voice" => "male"
             ));
         } catch (Exception $e){
-            $this -> assertEquals("InboundXML element 'Response' does not support 'Conference' element. The following elements are supported: 'Say, Play, Answer, Gather, GetSpeech, Record, PlayLastRecording, Dial, Hangup, Ping, Redirect, Reject, Pause, Sms, Mms, Connect'.", $e ->getMessage());
+            $this -> assertEquals("InboundXML element 'Response' does not support 'Conference' element. The following elements are supported: 'Say, Play, Answer, Gather, GetSpeech, Record, PlayLastRecording, Dial, Refer, Hangup, Ping, Redirect, Reject, Pause, Sms, Mms, Connect'.", $e ->getMessage());
         }
     }
 
@@ -85,7 +103,7 @@ final class InboundXMLTest extends TestCase {
                 "voice" => "male"
             ));
         } catch (Exception $e){
-            $this -> assertEquals("Verb 'Dialing' is not a valid InboundXML verb. Available verbs are: 'Response, Conference, Dial, Gather, Agent, Connect, GetSpeech, Hangup, Mms, Number, User, Pause, Ping, Play, PlayLastRecording, Answer, Record, Redirect, Reject, Say, Sip, Sms'", $e ->getMessage());
+            $this -> assertEquals("Verb 'Dialing' is not a valid InboundXML verb. Available verbs are: 'Response, Conference, Dial, Refer, Gather, Agent, Connect, GetSpeech, Hangup, Mms, Number, User, Pause, Ping, Play, PlayLastRecording, Answer, Record, Redirect, Reject, Say, Sip, Sms'", $e ->getMessage());
         }
     }
 
