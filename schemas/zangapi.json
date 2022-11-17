@@ -64,7 +64,7 @@
                     "Mms",
                     "Connect"
                 ],
-                "docs_url": "http://docs.zang.io/docs/response",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#response",
                 "blank": false
             },
             "Conference": {
@@ -90,7 +90,7 @@
                     "recordCallbackMethod"
                 ],
                 "nesting": [],
-                "docs_url": "http://docs.zang.io/docs/conference",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#conference",
                 "blank": false
             },
             "Dial": {
@@ -127,7 +127,7 @@
                     "Sip",
                     "User"
                 ],
-                "docs_url": "http://docs.zang.io/docs/dial",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#dial",
                 "blank": false
             },
             "Refer": {
@@ -141,7 +141,7 @@
                 "nesting": [
                     "Sip"
                 ],
-                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml/refer",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#refer",
                 "blank": false
             },
             "Gather": {
@@ -161,13 +161,13 @@
                     "Pause",
                     "PlayLastRecording"
                 ],
-                "docs_url": "http://docs.zang.io/docs/gather",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#gather",
                 "blank": true
             },
             "Agent": {
                 "attributes": [],
                 "nesting": [],
-                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml/agent",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#agent",
                 "blank": false
             },
             "Connect": {
@@ -178,7 +178,7 @@
                 "nesting": [
                     "Agent"
                 ],
-                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml/connect",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#connect",
                 "blank": false
             },
             "GetSpeech": {
@@ -204,7 +204,7 @@
                     "reason"
                 ],
                 "nesting": [],
-                "docs_url": "http://docs.zang.io/docs/hangup",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#hangup",
                 "blank": false
             },
             "Mms": {
@@ -218,7 +218,7 @@
                     "mediaUrl"
                 ],
                 "nesting": [],
-                "docs_url": "http://docs.zang.io/aspx/rest#send-mms",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#mms",
                 "blank": true
             },
             "Number": {
@@ -229,7 +229,7 @@
                     "sendOnPreanswer"
                 ],
                 "nesting": [],
-                "docs_url": "http://docs.zang.io/docs/number",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#number",
                 "blank": false
             },
             "User": {
@@ -246,7 +246,7 @@
                     "length"
                 ],
                 "nesting": [],
-                "docs_url": "http://docs.zang.io/docs/pause",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#pause",
                 "blank": true
             },
             "Ping": {
@@ -254,7 +254,7 @@
                     "method"
                 ],
                 "nesting": [],
-                "docs_url": "http://docs.zang.io/docs/ping",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#ping",
                 "blank": true
             },
             "Play": {
@@ -262,13 +262,13 @@
                     "loop"
                 ],
                 "nesting": [],
-                "docs_url": "http://docs.zang.io/docs/play",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#play",
                 "blank": false
             },
             "PlayLastRecording": {
                 "attributes": [],
                 "nesting": [],
-                "docs_url": "http://docs.zang.io/docs/playlastrecording",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#playlastrec",
                 "blank": true
             },
             "Answer": {
@@ -299,7 +299,7 @@
                     "lifetime"
                 ],
                 "nesting": [],
-                "docs_url": "http://docs.zang.io/docs/record",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#record",
                 "blank": true
             },
             "Redirect": {
@@ -307,7 +307,7 @@
                     "method"
                 ],
                 "nesting": [],
-                "docs_url": "http://docs.zang.io/docs/redirect",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#redirect",
                 "blank": true
             },
             "Reject": {
@@ -315,7 +315,7 @@
                     "reason"
                 ],
                 "nesting": [],
-                "docs_url": "http://docs.zang.io/docs/reject",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#reject",
                 "blank": true
             },
             "Say": {
@@ -325,7 +325,7 @@
                     "language"
                 ],
                 "nesting": [],
-                "docs_url": "http://docs.zang.io/docs/say",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#say",
                 "blank": false
             },
             "Sip": {
@@ -337,7 +337,7 @@
                     "sendDigits"
                 ],
                 "nesting": [],
-                "docs_url": "http://docs.zang.io/docs/sip",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#sip",
                 "blank": false
             },
             "Sms": {
@@ -350,7 +350,7 @@
                     "statusCallbackMethod"
                 ],
                 "nesting": [],
-                "docs_url": "http://docs.zang.io/docs/sms",
+                "docs_url": "https://docs.avayacloud.com/aspx/inboundxml#sms",
                 "blank": false
             }
         }
