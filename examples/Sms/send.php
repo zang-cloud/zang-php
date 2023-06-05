@@ -6,7 +6,7 @@
  * Time: 22:19
  */
 
-# First we must import the actual Zang library
+# First we must import the actual Avaya CPaaS library
 require_once '../../connectors/Sms.php';
 
 # If an error occurs, Zang_Exception will be raised. Due to this,

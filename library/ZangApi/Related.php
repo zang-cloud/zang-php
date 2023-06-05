@@ -10,7 +10,7 @@
  * @package   ZangApi
  * @author    Nevio Vesic
  * @license   http://creativecommons.org/licenses/MIT/ MIT
- * @copyright (2017) Zang
+ * @copyright Avaya Cloud Inc.
  */
 
 //$appRoot = dirname(dirname( dirname(__FILE__ )));
